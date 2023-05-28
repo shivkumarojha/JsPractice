@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: rgb(230, 245, 221);
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.input-container input {
+    padding: 10px;
+    margin: 5px;
+    border: 2px solid gray;
+    border-radius: 3px;
+}
+
+.input-container::placeholder {
+    text-align: center;
+    font-size: large;
+}
+
+button {
+    margin: 2px;
+    padding: 8px;
+}
+
+.calculate {
+    border: 2px solid red;
+    border-radius: 6px;
+    background: #edc8c8;
+    color: black;
+}

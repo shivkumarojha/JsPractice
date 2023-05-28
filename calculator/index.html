@@ -5,11 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>
-        <input type="number" name="num1" id="num1" placeholder="Enter Number 1">
-        <input type="number" name="num2" id="num2" placeholder="Enter Number 2">
+    <div class="container">
+        <h1>Calculator</h1>
+        <div class="input-container">
+            <input type="number" name="num1" id="num1" placeholder="Enter Number 1">
+            <input type="number" name="num2" id="num2" placeholder="Enter Number 2">
+        </div>
         <div>
             <button class="calculate" value="+" onclick="calculator(value)">Add</button>
             <button class="calculate" value="-" onClick="calculator(value)">Substract</button>

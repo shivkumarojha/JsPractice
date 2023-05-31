@@ -3,7 +3,7 @@ const addNewTag = document.getElementById("add-new-tag")
 const addTagInput = document.getElementById("add-tag-input")
 let tagList = document.getElementById("tag-list")
 let todoItems = {}
-
+let doneTodo = {}
 
 // Render List of Tags
 function renderTags() {
@@ -55,6 +55,26 @@ function showTodos(tagButtonId) {
         for (let items in todoItems[key]) {
             let todoCardUlLi = document.createElement('li')
             todoCardUlLi.innerText = todoItems[key][items]
+
+            
+            // Done Todo functionality
+            let todoDoneButton = document.createElement('button')
+            todoDoneButton.innerText = "Done"
+            todoCardUlLi.appendChild(todoDoneButton)
+            todoDoneButton.addEventListener('click', function () {
+                todoCardUlLi.style = "color:red; text-decoration: line-through;"
+            })
+
+
+            // Delete Todo functionality 
+            let todoCardUlLiDeleteButton = document.createElement('button')
+            
+            todoCardUlLiDeleteButton.innerText = "Delete"
+            todoCardUlLi.appendChild(todoCardUlLiDeleteButton)
+            todoCardUlLiDeleteButton.addEventListener('click', function () {
+                deleteTodo(key, items)
+            })
+
             todoCardUl.appendChild(todoCardUlLi)
         }
     todoCard.appendChild(todoCardUl)
@@ -62,21 +82,13 @@ function showTodos(tagButtonId) {
     document.getElementById(showTodos)
     }
 
-    // let todo = document.getElementById("showTodos")
-    // let todoTagDiv = document.createElement('div')
-    // todoTagDiv.id = tagButtonId
-
-    // let todoLi = document.createElement('li')
-
-    // todoLi.innerText = todoItems[tagButtonId]
-    // todoUl.appendChild(todoLi)
-    // todo.appendChild(todoUl)
-    // console.log(todo.innerHTML)
-    // todo.appendChild(todoUl)
-
-
 }
 
+// Delete Todo
+function deleteTodo(key, item) {
+    delete(todoItems[key][item])
+    showTodos()
+}
 
 // Create a New Todo Function
 function createTodo(tagButtonId) {

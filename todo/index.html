@@ -5,23 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="head">Todo App</div>
 
     <!-- Todo Section -->
     <div class="add-todo">
-        <input type="text" name="create-todo" id="create-todo" placeholder="Create new Todo"> <span style="color:red;">Click on below tag to create a new Todo</span>
+        <input type="text" name="create-todo" id="create-todo" placeholder="Create new Todo" required> <span style="color:red;">Click on below tag to create a new Todo</span>
 
         <!-- Render Tag list here -->
         <div id="tag-list">
             <!-- Here Tag list will render using renderList javascript -->
         </div>
     
-        <div class="showTodos">
-            <ul id="todo">
-
-            </ul>
+        <div id="showTodos">
+            
         </div>
 
         <div class="add-list-section">

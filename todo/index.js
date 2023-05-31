@@ -37,16 +37,57 @@ function addNewTagToTagList(){
 // Event Listner on add tag button
 addNewTag.addEventListener("click", addNewTagToTagList)
 
+
+// Show todos in application by every tag name
+function showTodos(tagButtonId) {
+    let showTodos = document.getElementById('showTodos')
+    showTodos.innerHTML = ""
+    for (let key in todoItems) {
+        let todoCard = document.createElement('div')
+        todoCard.id = key
+        todoCard.className = "card"
+        
+        let todoCardUl = document.createElement('ol')
+        let cardHeading = document.createElement('h3')
+        cardHeading.innerText = key
+        todoCard.appendChild(cardHeading)
+        
+        for (let items in todoItems[key]) {
+            let todoCardUlLi = document.createElement('li')
+            todoCardUlLi.innerText = todoItems[key][items]
+            todoCardUl.appendChild(todoCardUlLi)
+        }
+    todoCard.appendChild(todoCardUl)
+    showTodos.appendChild(todoCard)
+    document.getElementById(showTodos)
+    }
+
+    // let todo = document.getElementById("showTodos")
+    // let todoTagDiv = document.createElement('div')
+    // todoTagDiv.id = tagButtonId
+
+    // let todoLi = document.createElement('li')
+
+    // todoLi.innerText = todoItems[tagButtonId]
+    // todoUl.appendChild(todoLi)
+    // todo.appendChild(todoUl)
+    // console.log(todo.innerHTML)
+    // todo.appendChild(todoUl)
+
+
+}
+
+
 // Create a New Todo Function
 function createTodo(tagButtonId) {
     let createTodo = document.getElementById("create-todo")
-    let todo = document.getElementById("todo")
-    todoItems[tagButtonId].push(createTodo.value)
-    createTodo.value = ""
-    let todoLi = document.createElement('li')
-    todoLi.innerText = todoItems[tagButtonId]
-    todo.appendChild(todoLi)
-
+    if (createTodo.value != "") {
+        todoItems[tagButtonId].push(createTodo.value)
+        createTodo.value = ""
+        showTodos(tagButtonId)
+    } else{
+        alert("You can not create Blank Todo!")
+    }
 }
 // createTodo()
 

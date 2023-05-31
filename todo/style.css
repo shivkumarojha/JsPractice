@@ -1,0 +1,28 @@
+#showTodos {
+    display: flex;
+}
+.card {
+    background-color: cyan;
+    color: black;
+    flex-basis:400px;
+    border: 2px solid black;
+
+
+}
+
+li{
+    list-style: ;
+}
+
+
+/* add-list-section css */
+
+.add-list-section {
+    position: fixed;
+    /* left: 0;
+    right: 0; */
+    bottom: 0;
+    /* margin-top: 0; */
+    /* Remove the margin-top property */
+    margin-bottom: 20px;
+}

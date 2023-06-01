@@ -31,6 +31,7 @@ renderTags()
 function addNewTagToTagList(){
     const addTagInput = document.getElementById("add-tag-input")
     tag.push(addTagInput.value)
+    addTagInput.value = ""
     renderTags()
 }
 
